@@ -2,18 +2,16 @@ let password = "thisdFssdfst";
 
 const passwordChecker = (pass) => {
   let lengthOfPassword = pass.length;
-  let uppercaseChecker = false;
 
   // we check if the index cycling finds an uppercase
   for (let i = 0; i < lengthOfPassword; i++) {
     if (pass[i] === pass[i].toUpperCase()) {
       console.log("password contains 1 uppercase");
-      uppercaseChecker = true;
+
       break;
       // else we wait til i indexes all of the characters to then give an exception to not bombard console log
     } else if (i === lengthOfPassword - 1) {
       console.log("password must contain at least 1 uppercase letter");
-      uppercaseChecker = false;
     }
   }
 
