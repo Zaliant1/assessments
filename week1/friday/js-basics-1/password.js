@@ -1,6 +1,15 @@
-let password = "thisdFssdfst";
+const { strictEqual } = require("assert");
+const { read } = require("fs");
+const readline = require("readline");
 
-const passwordChecker = (pass) => {
+const reader = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+console.log("welcome to the password validator tool");
+
+reader.question("give math equation separated by spaces ", (pass) => {
   let lengthOfPassword = pass.length;
 
   // we check if the index cycling finds an uppercase
@@ -21,18 +30,20 @@ const passwordChecker = (pass) => {
   } else {
     console.log("password contains 10 characters");
   }
-};
-passwordChecker(password);
 
-console.log(`
-      ___                       \n
-     /\__\          ___         \n
-    /:/  /         /\  \        \n
-   /:/__/          \:\  \       \n
-  /::\  \ ___      /::\__\      \n
- /:/\:\  /\__\  __/:/\/__/      \n
- \/__\:\/:/  / /\/:/  /         \n
-      \::/  /  \::/__/          \n
-      /:/  /    \:\__\`         \n
-     /:/  /      \/__/          \n
-     \/__/                `);
+  reader.close();
+});
+
+// could not figure this one out
+// console.log(`
+//       ___                       \n
+//      /\__\          ___         \n
+//     /:/  /         /\  \        \n
+//    /:/__/          \:\  \       \n
+//   /::\  \ ___      /::\__\      \n
+//  /:/\:\  /\__\  __/:/\/__/      \n
+//  \/__\:\/:/  / /\/:/  /         \n
+//       \::/  /  \::/__/          \n
+//       /:/  /    \:\__\`         \n
+//      /:/  /      \/__/          \n
+//      \/__/                `);
